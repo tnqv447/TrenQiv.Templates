@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "tnqv447",
+  "classifications": [
+    "Common",
+    "Code"
+  ],
+  "identity": "TreynQuiv.Templates",
+  "name": "TreynQuiv template for personal common use extensions",
+  "shortName": "my-ext",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "symbols": {
+    "ClassName": {
+      "type": "parameter",
+      "description": "The name of the project namespace.",
+      "datatype": "text",
+      "replaces": "TreynQuiv.Templates",
+      "defaultValue": "TreynQuiv.Templates"
+    }
+  }
+}
