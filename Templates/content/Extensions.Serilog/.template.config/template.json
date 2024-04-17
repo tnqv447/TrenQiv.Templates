@@ -5,9 +5,9 @@
     "Common",
     "Code"
   ],
-  "identity": "TreynQuiv.Templates.Extensions",
-  "name": "TreynQuiv template for commonly used extensions",
-  "shortName": "tnqv-ext",
+  "identity": "TreynQuiv.Templates.Extensions.Serilog",
+  "name": "TreynQuiv template serilog configuration and extensions",
+  "shortName": "tnqv-ext-serilog",
   "tags": {
     "language": "C#",
     "type": "item"

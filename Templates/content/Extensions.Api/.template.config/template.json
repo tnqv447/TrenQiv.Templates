@@ -7,7 +7,7 @@
   ],
   "identity": "TreynQuiv.Templates.Extensions",
   "name": "TreynQuiv template for commonly used extensions",
-  "shortName": "tnqv-ext",
+  "shortName": "tnqv-ext-api",
   "tags": {
     "language": "C#",
     "type": "item"
