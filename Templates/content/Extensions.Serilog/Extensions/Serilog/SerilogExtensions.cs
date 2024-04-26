@@ -20,10 +20,10 @@ public static class SerilogSettings
             .WriteTo.Map(
                 ev => $"{DateTime.Now:dd-MM-yyyy}",
                 (date, wt) => wt.File($"./logs/{date}.log",
-                                      LogEventLevel.Information,
-                                      LogTemplate,
-                                      fileSizeLimitBytes: 10000000,
-                                      rollOnFileSizeLimit: true))
+                                    LogEventLevel.Information,
+                                    LogTemplate,
+                                    fileSizeLimitBytes: 10000000,
+                                    rollOnFileSizeLimit: true))
             .CreateLogger()
             .ForContext("Executioner", $" (SYSTEM)");
     }
@@ -49,7 +49,7 @@ public static class SerilogSettings
     }
 
     /// <summary>
-    /// Default log error with message: <c>An error occurred:</c>.
+    /// A custom extension method of <c>Serilog.ILogger.Error(ex, message)</c> with message: <c>"An error occurred:"</c>.
     /// </summary>
     public static void Error(this ILogger logger, Exception ex)
     {
