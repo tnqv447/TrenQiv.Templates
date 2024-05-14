@@ -6,7 +6,7 @@ namespace TreynQuiv.Templates.Extensions;
 public static class ApplicationBuilderExtensions
 {
     /// <summary>
-    /// A middleware to set X-Content-Type-Options header to <see cref="HttpResponse"/>. Default: <c>NOSNIF</c>.
+    /// A middleware to set <c>X-Content-Type-Options</c> header to <see cref="HttpResponse"/>. Default: <c>NOSNIF</c>.
     /// </summary>
     public static IApplicationBuilder UseXContentTypeOptions(this IApplicationBuilder builder, string headerValue = "NOSNIFF")
     {
@@ -19,7 +19,7 @@ public static class ApplicationBuilderExtensions
     }
 
     /// <summary>
-    /// A middleware to set X-Frame-Options header to <see cref="HttpResponse"/>. Default: <c>SAMEORIGIN</c>.
+    /// A middleware to set <c>X-Frame-Options header</c> to <see cref="HttpResponse"/>. Default: <c>SAMEORIGIN</c>.
     /// </summary>
     public static IApplicationBuilder UseXFrameOptions(this IApplicationBuilder builder, string headerValue = "SAMEORIGIN")
     {
@@ -32,7 +32,7 @@ public static class ApplicationBuilderExtensions
     }
 
     /// <summary>
-    /// A middleware to set Content-Security-Policy header to <see cref="HttpResponse"/>. Default: <c>default-src 'self'; script-src 'self';</c>.
+    /// A middleware to set <c>Content-Security-Policy</c> header to <see cref="HttpResponse"/>. Default: <c>default-src 'self'; script-src 'self';</c>.
     /// </summary>
     public static IApplicationBuilder UseContentSecurityPolicy(this IApplicationBuilder builder, string headerValue = "default-src 'self'; script-src 'self';")
     {
