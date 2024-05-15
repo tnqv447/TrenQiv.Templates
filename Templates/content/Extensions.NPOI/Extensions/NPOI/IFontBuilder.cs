@@ -1,6 +1,6 @@
 using NPOI.SS.UserModel;
 
-namespace TreynQuiv.Templates.Extensions.NPOI;
+namespace TrenQiv.Templates.Extensions.NPOI;
 
 /// <summary>
 /// Base interface for configuring common properties of <see cref="IFont"/>.

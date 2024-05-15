@@ -1,7 +1,7 @@
 using System.Text;
 using Microsoft.AspNetCore.Builder;
 
-namespace TreynQuiv.Templates.Extensions;
+namespace TrenQiv.Templates.Extensions;
 
 public static class ApplicationBuilderExtensions
 {

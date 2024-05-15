@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TreynQuiv.Templates.Extensions;
+namespace TrenQiv.Templates.Extensions;
 
 public static class StringExtensions
 {
@@ -56,14 +56,15 @@ public static class StringExtensions
     }
 
     /// <summary>
-    /// Format the string to <c>camelCase</c>
+    /// Format the string to <c>camelCase</c>.
     /// </summary>
+    /// <remarks>By default, this method will remove the spaces, <see cref="Environment.NewLine"/> and these characters: [<c>_</c>, <c>-</c>, <c>|</c>, <c>#</c>] </remarks>
     /// <param name="text"></param>
     /// <returns></returns>
-    public static string ToCamelCase(this string text)
+    public static string ToCamelCase(this string text, params string[] additionalSeparators)
     {
         ArgumentNullException.ThrowIfNull(text);
-        Span<char> separators = ['_', '-', '|', '#', ' '];
+        Span<string> separators = [" ", "_", "-", "|", "#", Environment.NewLine, .. additionalSeparators];
         var words = text.Split(separators.ToArray(), StringSplitOptions.RemoveEmptyEntries);
         return string.Join(string.Empty, words);
     }

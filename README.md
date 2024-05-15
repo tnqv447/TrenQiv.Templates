@@ -1,4 +1,5 @@
-# TreynQuiv.Lib
+# TrenQiv.Lib
+
 Personal library of custom functions and extensions
 
-___IN DEVELOPMENT___
+**_IN DEVELOPMENT_**

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace TreynQuiv.Templates.Attributes;
+namespace TrenQiv.Templates.Attributes;
 
 public sealed class HttpAutoLogAttribute : ActionFilterAttribute
 {

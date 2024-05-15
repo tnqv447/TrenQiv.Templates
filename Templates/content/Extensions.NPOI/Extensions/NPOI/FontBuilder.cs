@@ -1,7 +1,9 @@
 using System.Runtime.CompilerServices;
+using NPOI.HSSF.Util;
 using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
 
-namespace TreynQuiv.Templates.Extensions.NPOI;
+namespace TrenQiv.Templates.Extensions.NPOI;
 
 /// <summary>
 /// Built-in implementation of <see cref="IFontBuilder"/>.
@@ -71,15 +73,13 @@ public class FontBuilder : IFontBuilder
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public IFontBuilder Color(IColor color)
     {
-        _font.Color = color.Indexed;
-        return this;
+        return Color(color.Indexed);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public IFontBuilder Color(IndexedColors color)
     {
-        _font.Color = color.Index;
-        return this;
+        return Color(color.Index);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

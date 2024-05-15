@@ -2,7 +2,7 @@ using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace TreynQuiv.Templates.Extensions;
+namespace TrenQiv.Templates.Extensions;
 
 public static class AttributeAccessorExtensions
 {

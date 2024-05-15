@@ -1,6 +1,6 @@
 using NPOI.SS.UserModel;
 
-namespace TreynQuiv.Templates.Extensions.NPOI;
+namespace TrenQiv.Templates.Extensions.NPOI;
 
 /// <summary>
 /// Base interface for configuring common properties of <see cref="ICellStyle"/>.
@@ -23,101 +23,94 @@ public interface ICellStyleBuilder
     ICellStyleBuilder CloneFrom(ICellStyleBuilder otherStyleBuilder);
 
     /// <summary>
+    /// Apply <see cref="CellStyleOptions"/> to this <see cref="ICellStyleBuilder"/>.
+    /// </summary>
+    /// <param name="options"></param>
+    /// <returns></returns>
+    ICellStyleBuilder ApplyOptions(CellStyleOptions options);
+
+    /// <summary>
     /// Enables wrapping text. If <paramref name="enable"/> is <see langword="false"/>, disable instead.
     /// </summary>
     ICellStyleBuilder WrapText(bool enable = true);
 
     /// <summary>
-    /// Set cell font.
+    /// Set cell's font.
     /// </summary>
     ICellStyleBuilder Font(IFont font);
 
     /// <summary>
-    /// Set cell foreground color.
+    /// Set cell's foreground color.
     /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder Color(IColor color);
+    ICellStyleBuilder ForegroundColor(IColor color);
 
     /// <summary>
-    /// Set cell background color.
+    /// Set cell's foreground color.
     /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
+    ICellStyleBuilder ForegroundColor(IndexedColors color);
+
+    /// <summary>
+    /// Set cell's foreground color by index.
+    /// </summary>
+    ICellStyleBuilder ForegroundColor(short color);
+
+    /// <summary>
+    /// Set cell's background color.
+    /// </summary>
     ICellStyleBuilder BackgroundColor(IColor color);
 
     /// <summary>
-    /// Set cell full border style.
+    /// Set cell's background color.
     /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder Border(BorderStyle fullBorderStyle = BorderStyle.Thin, IColor? color = null);
+    ICellStyleBuilder BackgroundColor(IndexedColors color);
 
     /// <summary>
-    /// Set cell top border style.
+    /// Set cell's background color by index.
     /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder BorderTop(BorderStyle borderStyle = BorderStyle.Thin, IColor? color = null);
+    ICellStyleBuilder BackgroundColor(short color);
 
     /// <summary>
-    /// Set cell bottom border style.
+    /// Set cell's fill pattern.
     /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder BorderBottom(BorderStyle borderStyle = BorderStyle.Thin, IColor? color = null);
+    ICellStyleBuilder ApplyFillPattern(FillPattern fillPattern = FillPattern.NoFill);
 
     /// <summary>
-    /// Set cell left border style.
+    /// Set cell's border style by <see cref="BorderOptions"/>.
     /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder BorderLeft(BorderStyle borderStyle = BorderStyle.Thin, IColor? color = null);
+    ICellStyleBuilder Border(BorderOptions options);
 
     /// <summary>
-    /// Set cell right border style.
+    /// Set cell's border style for all four edges bt <see cref="BorderEdgeOptions"/> .
     /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder BorderRight(BorderStyle borderStyle = BorderStyle.Thin, IColor? color = null);
+    ICellStyleBuilder Border(BorderEdgeOptions options);
 
     /// <summary>
-    /// Set cell top-left border style.
+    /// Set cell's top border style.
     /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder BorderTopLeft(BorderStyle borderStyle = BorderStyle.Thin, IColor? color = null);
+    ICellStyleBuilder BorderTop(BorderEdgeOptions options);
 
     /// <summary>
-    /// Set cell top-right border style.
+    /// Set cell's bottom border style.
     /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder BorderTopRight(BorderStyle borderStyle = BorderStyle.Thin, IColor? color = null);
+    ICellStyleBuilder BorderBottom(BorderEdgeOptions options);
 
     /// <summary>
-    /// Set cell bottom-left border style.
+    /// Set cell's left border style.
     /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder BorderBottomLeft(BorderStyle borderStyle = BorderStyle.Thin, IColor? color = null);
+    ICellStyleBuilder BorderLeft(BorderEdgeOptions options);
 
     /// <summary>
-    /// Set cell bottom-right border style.
+    /// Set cell's right border style.
     /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder BorderBottomRight(BorderStyle borderStyle = BorderStyle.Thin, IColor? color = null);
+    ICellStyleBuilder BorderRight(BorderEdgeOptions options);
 
     /// <summary>
-    /// Set cell top-bottom border style.
+    /// Set cell's diagonal border style.
     /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder BorderTopBottom(BorderStyle borderStyle = BorderStyle.Thin, IColor? color = null);
+    ICellStyleBuilder BorderDiagonal(BorderDiagonalOptions options);
 
     /// <summary>
-    /// Set cell left-right border style.
-    /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder BorderLeftRight(BorderStyle borderStyle = BorderStyle.Thin, IColor? color = null);
-
-    /// <summary>
-    /// Set cell diagonal border style.
-    /// </summary>
-    /// <remarks>To use <see cref="IndexedColors"/>, cast it to <see cref="IColor"/>.</remarks>
-    ICellStyleBuilder BorderDiagonal(BorderDiagonal diagonal, BorderStyle borderStyle = BorderStyle.Thin, IColor? color = null);
-
-    /// <summary>
-    /// Set cell data format string.
+    /// Set cell's data format string.
     /// </summary>
     /// <remarks>
     /// <para>Useful for display <see cref="DateTime"/> as string, delimited number,...</para>
@@ -127,12 +120,12 @@ public interface ICellStyleBuilder
     ICellStyleBuilder DataFormat(string formatString);
 
     /// <summary>
-    /// Set cell horizontal alignment.
+    /// Set cell's horizontal alignment.
     /// </summary>
     ICellStyleBuilder HorizontalAlignment(HorizontalAlignment alignment);
 
     /// <summary>
-    /// Set cell vertical alignment.
+    /// Set cell's vertical alignment.
     /// </summary>
     ICellStyleBuilder VerticalAlignment(VerticalAlignment alignment);
 }

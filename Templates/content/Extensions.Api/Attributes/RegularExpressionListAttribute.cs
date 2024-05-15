@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
-namespace TreynQuiv.Templates.Attributes;
+namespace TrenQiv.Templates.Attributes;
 
 public class RegularExpressionListAttribute(string pattern) : RegularExpressionAttribute(pattern)
 {

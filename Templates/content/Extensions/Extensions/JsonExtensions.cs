@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 
-namespace TreynQuiv.Templates.Extensions;
+namespace TrenQiv.Templates.Extensions;
 
 public static class JsonExtensions
 {
