@@ -5,8 +5,8 @@
     "Common",
     "Code"
   ],
-  "identity": "TreynQuiv.Templates.Extensions",
-  "name": "TreynQuiv template for commonly used extensions",
+  "identity": "TrenQiv.Templates.Extensions",
+  "name": "TrenQiv template for commonly used extensions",
   "shortName": "tnqv-ext-api",
   "tags": {
     "language": "C#",
@@ -18,8 +18,8 @@
       "valueSource": "name",
       "valueTransform": "titleCase",
       "datatype": "text",
-      "replaces": "TreynQuiv.Templates",
-      "defaultValue": "TreynQuiv.Templates"
+      "replaces": "TrenQiv.Templates",
+      "defaultValue": "TrenQiv.Templates"
     }
   },
   "forms": {

@@ -1,7 +1,8 @@
 using System.Runtime.CompilerServices;
 using NPOI.SS.UserModel;
+using NPOI.SS.Util;
 
-namespace TreynQuiv.Templates.Extensions.NPOI;
+namespace TrenQiv.Templates.Extensions.NPOI;
 
 public static class ISheetExtensions
 {

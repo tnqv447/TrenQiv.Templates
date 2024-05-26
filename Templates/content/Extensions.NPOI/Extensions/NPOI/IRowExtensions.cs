@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using NPOI.SS.UserModel;
 
-namespace TreynQuiv.Templates.Extensions.NPOI;
+namespace TrenQiv.Templates.Extensions.NPOI;
 
 public static class IRowExtensions
 {
@@ -47,7 +47,7 @@ public static class IRowExtensions
                 cell.CellStyle = cellStyle;
             }
 
-            cell.SetValue(values[i]);
+            cell.SetCellValue(values[i]);
         }
     }
 }

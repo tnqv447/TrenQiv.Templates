@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using IComponent = Microsoft.AspNetCore.Components.IComponent;
 
-namespace TreynQuiv.Templates.Helpers;
+namespace TrenQiv.Templates.Helpers;
 
 internal class BlazorRenderer : IAsyncDisposable
 {

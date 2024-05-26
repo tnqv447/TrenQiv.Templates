@@ -3,7 +3,7 @@ using Serilog;
 using Serilog.Core;
 using Serilog.Events;
 
-namespace TreynQuiv.Templates.Extensions.Serilog;
+namespace TrenQiv.Templates.Extensions.Serilog;
 
 public static class SerilogSettings
 {
@@ -49,7 +49,7 @@ public static class SerilogSettings
     }
 
     /// <summary>
-    /// A custom extension method of <c>Serilog.ILogger.Error(ex, message)</c> with message: <c>"An error occurred:"</c>.
+    /// A short-hand method for <c>Serilog.ILogger.Error(ex, message)</c> with message: <c>"An error occurred:"</c>.
     /// </summary>
     public static void Error(this ILogger logger, Exception ex)
     {
@@ -57,6 +57,9 @@ public static class SerilogSettings
     }
 }
 
+/// <summary>
+/// An <see cref="ILogEventEnricher"/> for supplying <see cref="Environment.CurrentManagedThreadId"/> to log context
+/// </summary>
 internal class ThreadIdEnricher : ILogEventEnricher
 {
     public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
